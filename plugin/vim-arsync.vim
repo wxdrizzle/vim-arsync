@@ -97,6 +97,11 @@ function! ARsync(direction)
                 let l:cmd = [ 'rsync', l:conf_dict['local_options'],  l:conf_dict['local_path'] , l:conf_dict['remote_path'] . '/', '--delete']
             endif
         endif
+        if has_key(l:conf_dict, 'include')
+            for file in l:conf_dict['include']
+                let l:cmd = l:cmd + ['--include', file]
+            endfor
+        endif
         if has_key(l:conf_dict, 'ignore_path')
             for file in l:conf_dict['ignore_path']
                 let l:cmd = l:cmd + ['--exclude', file]

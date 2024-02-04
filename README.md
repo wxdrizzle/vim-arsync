@@ -20,7 +20,7 @@ vim plugin for asynchronous synchronisation of remote files and local files usin
 Place this in your .vimrc:
 
 ```vim
-Plug 'kenn7/vim-arsync'
+Plug 'wxdrizzle/vim-arsync'
 
 " vim-arsync depedencies
 Plug 'prabirshrestha/async.vim'
@@ -35,7 +35,7 @@ Plug 'prabirshrestha/async.vim'
 ### Using Packer
 
 ```lua
-use {'kenn7/vim-arsync',
+use {'wxdrizzle/vim-arsync',
     requires = {
         {'prabirshrestha/async.vim'}
     }
@@ -82,6 +82,7 @@ Optional fields are:
 - ```sleep_before_sync```   set to x seconds if you want to sleep before sync(like compiling a file before syncing)
 - ```local_options``` overrides the default rsync options for case where `remote_or_local` is local
 - ```remote_options``` overrides the default rsync options for case where `remote_or_local` is remote
+- ```include``` file patterns to include for sync
 
 **NOTE:**
 - fields can be commented out with ```#```
